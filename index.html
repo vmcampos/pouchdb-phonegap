@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+  <script src="cordova.js"></script>  
+  <title></title>
+    
+  <link rel="stylesheet" href="jquery.mobile-1.4.2.min.css">
+  
+  <!-- jQuery and jQuery Mobile -->
+  <script src="jquery-2.1.1.min.js"></script>
+  <script src="jquery.mobile-1.4.2.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="custom.ext.js"></script>
+  <!-- PouchDB JS -->
+  <script src="pouchdb-2.2.3.min.js"></script>
+   
+</head>
+<body>
+<!-- Home -->
+<div data-role="page" id="home">
+    <div data-theme="a" data-role="header" data-position="fixed">
+        <h3>
+            SDCE Catalog
+        </h3>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li>
+                    <a href="#" data-transition="fade" data-theme="" data-icon="home"
+                    class="ui-btn-active ui-state-persist">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-transition="fade" data-theme="" data-icon="edit">
+                        Art
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-transition="fade" data-theme="" data-icon="alert">
+                        Computers
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div data-role="content">
+        <div style="overflow: hidden; width: 100%; height: 100%; position: relative; background-color: #fbfbfb; border: 5px double gray; margin-top: 1em; ">
+            <img src="images/gradbanner2.jpg" alt="image" style="display: block;">
+        </div>
+        <h2 id="welcomeMsg">
+            Welcome! Take a class.
+        </h2>
+       <p>
+		SDCE provides a variety of classes, many of them for free.
+	   </p>
+	   <p>
+	   	Stay up to date with our app, and get in contact with us.
+	   </p>
+		<a href="#myclasses" data-role="button" data-inline="true" data-icon="check" data-transition="slideup">My Classes</a>
+    </div>
+    <div data-theme="a" data-role="footer" data-position="fixed">
+        <h3>
+            Copyright 2014
+        </h3>
+    </div>
+</div>
+
+<!-- Classes Page  -->
+<div data-role="page" id="myclasses">
+	<div data-role="header" data-add-back-btn="true">
+		<h1>My Classes</h1>
+	</div>
+	<div data-role="content">
+		<h2>Keep Track</h2>
+		<form>
+			CRN: <input type="text" id="crnField">
+			<br>
+			Class Title: <input type="text" id="titleField">
+			<br>
+			Instructor: <input type="text" id="instructorField">
+			<br>
+			<input type="reset" value="Reset">
+			<br>
+			<input type="button" value="Add Class" onclick="addClasses();">
+			<br>
+			<input type="button" value="Shows Classes" onclick="showClasses(db);">
+		</form>
+		<div id="message"></div>
+	</div>
+</div>
+
+</body>
+</html>
