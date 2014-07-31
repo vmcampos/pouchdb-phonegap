@@ -6,16 +6,16 @@
   <script src="cordova.js"></script>  
   <title></title>
     
-  <link rel="stylesheet" href="jquery.mobile-1.4.2.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.css">
   
   <!-- jQuery and jQuery Mobile -->
-  <script src="jquery-2.1.1.min.js"></script>
-  <script src="jquery.mobile-1.4.2.min.js"></script>
+  <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
 
   <!-- Custom JS -->
   <script src="custom.ext.js"></script>
   <!-- PouchDB JS -->
-  <script src="pouchdb-2.2.3.min.js"></script>
+  <script src="https://github.com/daleharvey/pouchdb/releases/download/2.2.3/pouchdb-2.2.3.min.js"></script>
    
 </head>
 <body>
@@ -84,9 +84,9 @@
 			<br>
 			<input type="reset" value="Reset">
 			<br>
-			<input type="button" value="Add Class" onclick="addClasses();">
+			<input type="button" value="Add Class" id="addClasses">
 			<br>
-			<input type="button" value="Shows Classes" onclick="showClasses(db);">
+			<input type="button" value="Shows Classes" id="showClasses">
 		</form>
 		<div id="message"></div>
 	</div>
