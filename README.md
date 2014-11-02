@@ -1,9 +1,34 @@
 pouchdb-phonegap
 ================
 
-Work in progress: trying to get PouchDB to work in PhoneGap/Cordova on Android as-is.
+PouchDB and PhoneGap with jQuery Mobile
 
-PROBLEMS SO FAR:
-All the PouchDB code is added to the onDeviceReady() function that fires after "deviceready".
-The addClasses() and showClasses() functions are accessible now, and everything seems to work on an emulator.
-BUT it doesn't seem to work on an LG 730 Android 4.1.2 device. 
+A proof of concept for PouchdDB implemented in PhoneGap/Cordova, with jQuery Mobile.
+
+The project has two screens (Home and My Classes). In "My Classes," a user enters a unique class number, class title, and instructor name and that information is saved to the internal and persistent database. A user may remove any class, thereafter.
+
+Tested to work on Android 4.1.2+ (an LG 730). Does not seem to work on Android 2.3.4 (a Droid X). 
+
+The project was set up in PhoneGap 2.9.0, with all defaults.
+
+Suggestions to run the project yourself: in Eclipse with Android Developer Tools, load the PhoneGap "example" project, and replace its "index.html" with this one; include the "custom.ext.js" as well.
+
+
+Changelog:
+Updated to latest jQuery Mobile CDN.
+Updated to latest PouchDB CDN.
+Updated all "div" elements to Semantic HTML5.
+
+
+Notes:
+Implementing PouchDB in PhoneGap/Cordova requires all relevant code to exist in "onDeviceReady()" as per: 
+https://github.com/pouchdb/pouchdb/wiki/PouchDB-on-Phonegap
+
+Original concept to capture user data is based on:
+"PouchDB Jump Start" by Haim Michael - http://youtu.be/JzuQ5tjh9X0
+
+
+To-do:
+Needs more error-checking when data is entered.
+Test on newer PhoneGap/Cordova.
+Use "native" alert boxes.

@@ -3,29 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
-  <script src="cordova.js"></script>  
-  <title></title>
-    
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.css">
   
-  <!-- jQuery and jQuery Mobile -->
+  <title>PouchDB and PhoneGap with jQuery Mobile</title>
+    
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  
   <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
-
-  <!-- Custom JS -->
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="cordova.js"></script>
+  <script src="https://github.com/daleharvey/pouchdb/releases/download/3.0.6/pouchdb-3.0.6.min.js"></script>
   <script src="custom.ext.js"></script>
-  <!-- PouchDB JS -->
-  <script src="https://github.com/daleharvey/pouchdb/releases/download/2.2.3/pouchdb-2.2.3.min.js"></script>
    
 </head>
 <body>
-<!-- Home -->
-<div data-role="page" id="home">
-    <div data-theme="a" data-role="header" data-position="fixed">
-        <h3>
-            SDCE Catalog
-        </h3>
-        <div data-role="navbar" data-iconpos="top">
+<!-- Home Screen -->
+<section data-role="page" id="home">
+    <header data-theme="a" data-role="header" data-position="fixed">
+        <h3>SDCE Catalog</h3>
+        <nav data-role="navbar" data-iconpos="top">
             <ul>
                 <li>
                     <a href="#" data-transition="fade" data-theme="" data-icon="home"
@@ -39,58 +34,56 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" data-transition="fade" data-theme="" data-icon="alert">
+                    <a href="#" data-transition="fade" data-theme="" data-icon="power">
                         Computers
                     </a>
                 </li>
             </ul>
-        </div>
-    </div>
-    <div data-role="content">
+        </nav>
+    </header>
+    <article data-role="content">
         <div style="overflow: hidden; width: 100%; height: 100%; position: relative; background-color: #fbfbfb; border: 5px double gray; margin-top: 1em; ">
             <img src="http://sdce.edu/sites/default/files/gradbanner2.jpg" alt="image" style="display: block;">
         </div>
-        <h2 id="welcomeMsg">
-            Welcome! Take a class.
-        </h2>
-       <p>
-		SDCE provides a variety of classes, many of them for free.
-	   </p>
-	   <p>
-	   	Stay up to date with our app, and get in contact with us.
-	   </p>
-		<a href="#myclasses" data-role="button" data-inline="true" data-icon="check" data-transition="slideup">My Classes</a>
-    </div>
-    <div data-theme="a" data-role="footer" data-position="fixed">
-        <h3>
-            Copyright 2014
-        </h3>
-    </div>
-</div>
+        <h2>Welcome! Take a class.</h2>
+       <p>SDCE provides a variety of classes, many of them for free.</p>
+		<a href="#myclasses" data-role="button" data-inline="true" data-icon="bullets" data-transition="slideup">My Classes</a>
+    </article>
+    <footer data-theme="a" data-role="footer" data-position="fixed">
+        <h3>Copyright &copy; 2014</h3>
+    </footer>
+</section>
+<!-- /Home Screen -->
 
-<!-- Classes Page  -->
-<div data-role="page" id="myclasses">
-	<div data-role="header" data-add-back-btn="true">
+<!-- Classes Screen  -->
+<section data-role="page" id="myclasses">
+	<header data-role="header" data-position="fixed" data-add-back-btn="true">
 		<h1>My Classes</h1>
-	</div>
-	<div data-role="content">
+	</header>
+	<article data-role="content">
 		<h2>Keep Track</h2>
-		<form>
+		<form id="classForm">
 			CRN: <input type="text" id="crnField">
 			<br>
 			Class Title: <input type="text" id="titleField">
 			<br>
 			Instructor: <input type="text" id="instructorField">
 			<br>
-			<input type="reset" value="Reset">
-			<br>
-			<input type="button" value="Add Class" id="addClasses">
-			<br>
-			<input type="button" value="Shows Classes" id="showClasses">
+			<div class="ui-grid-b">
+				<div class="ui-block-a">
+					<input type="reset" value="Reset" data-icon="minus"> 
+				</div>
+				<div class="ui-block-b">
+					<input type="button" value="Add" id="addClasses" data-icon="check">
+				</div>
+				<div class="ui-block-c">
+					<input type="button" value="Show" id="showClasses" data-icon="eye">
+				</div>
+        	</div>
 		</form>
 		<div id="message"></div>
-	</div>
-</div>
-
+	</article>
+</section>
+<!-- Classes Screen  -->
 </body>
 </html>
